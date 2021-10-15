@@ -6,8 +6,8 @@ import sys
 this_dir = osp.dirname(__file__) # the path of current file
 project_root = osp.abspath(osp.join(this_dir, '../..')) 
 sys.path.append(project_root)
-from Utility.LoadDataHelper import read_from_pcd_file
-from Utility.Visualizer import *
+from utils.load_data_helper import read_from_pcd_file
+from utils.visualizer import *
 
 class Open3DISSDetector:
     def __init__(self, pcd):

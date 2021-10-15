@@ -6,8 +6,8 @@ import sys
 this_dir = osp.dirname(__file__) # the path of current file
 project_root = osp.abspath(osp.join(this_dir, '../..')) #得到绝对路径
 sys.path.append(project_root)
-from Utility.LoadDataHelper import ReadPointCloudFromFile_ModelNet40
-from Utility.Visualizer import Visualize
+from utils.load_data_helper import ReadPointCloudFromFile_ModelNet40
+from utils.visualizer import Visualize
 
 class ISSDetector:
     # weight_radius - the considered range when calculating the weight of a neighbour point

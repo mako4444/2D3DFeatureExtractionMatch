@@ -6,7 +6,7 @@ import sys
 this_dir = osp.dirname(__file__) # the path of current file
 project_root = osp.abspath(osp.join(this_dir, '../')) 
 sys.path.append(project_root)
-from Utility.LoadDataHelper import *
+from utils.load_data_helper import *
 
 class PointCloudVisualizer:
     def __init__(self, pcd):
