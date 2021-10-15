@@ -5,7 +5,7 @@ import copy
 
 # np_pts 3 x n
 # key_pts 3 x m
-def Visualize(np_pts, np_key_pts):
+def visualize(np_pts, np_key_pts):
     np_pts = np_pts.transpose()
     np_key_pts = np_key_pts.transpose()
 

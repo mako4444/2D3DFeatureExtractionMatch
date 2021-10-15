@@ -6,8 +6,8 @@ import sys
 this_dir = osp.dirname(__file__) # the path of current file
 project_root = osp.abspath(osp.join(this_dir, '../..')) #得到绝对路径
 sys.path.append(project_root)
-from utils.load_data_helper import ReadPointCloudFromFile_ModelNet40
-from utils.visualizer import Visualize
+from utils.load_data_helper import read_pointcloud_modelnet40
+from utils.naive_visualizer import visualize
 
 class ISSDetector:
     # weight_radius - the considered range when calculating the weight of a neighbour point
@@ -138,7 +138,7 @@ class ISSDetector:
         return np_key_pts
     
 if __name__ == "__main__":
-    np_pts = ReadPointCloudFromFile_ModelNet40("/home/han/Projects/Datasets/modelnet40_normal_resampled/airplane/airplane_0001.txt")
+    np_pts = read_pointcloud_modelnet40("/home/han/Projects/Datasets/modelnet40_normal_resampled/airplane/airplane_0001.txt")
     # weight_radius - smaller can make the key point closer to the corner
     # r_threshod - [0, 1]. the threshold of how good is the point 
     # nms_radius - the density of the final result, higher is sparser
@@ -147,5 +147,5 @@ if __name__ == "__main__":
     iss_detector = ISSDetector(np_pts, weight_radius=0.025, r_threshold=0.1, nms_radius=0.1, gamma_21=0.5, gamma_32=0.3)
     np_key_pts = iss_detector.detect_ISS()
 
-    Visualize(np_pts, np_key_pts)
+    visualize(np_pts, np_key_pts)
     

@@ -1,7 +1,7 @@
 import numpy as np
 import open3d as o3d
 
-def ReadPointCloudFromFile_ModelNet40(fileFullPath):
+def read_pointcloud_modelnet40(fileFullPath):
     np_pts = np.zeros(0)
 
     file = fileFullPath.split("/")[-1]
@@ -30,5 +30,5 @@ def read_from_image_file(file_full_path):
     return image
 
 if __name__ == "__main__":
-    ReadPointCloudFromFile_ModelNet40("/home/han/Projects/Datasets/modelnet40_normal_resampled/airplane/airplane_0001.txt")
+    read_pointcloud_modelnet40("/home/han/Projects/Datasets/modelnet40_normal_resampled/airplane/airplane_0001.txt")
     
