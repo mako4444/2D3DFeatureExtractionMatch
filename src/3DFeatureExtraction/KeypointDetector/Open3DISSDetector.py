@@ -6,7 +6,7 @@ import sys
 this_dir = osp.dirname(__file__) # the path of current file
 project_root = osp.abspath(osp.join(this_dir, '../..')) 
 sys.path.append(project_root)
-from Utility.LoadPointCloud import read_from_pcd_file
+from Utility.LoadDataHelper import read_from_pcd_file
 from Utility.Visualizer import *
 
 class Open3DISSDetector:
@@ -18,9 +18,9 @@ class Open3DISSDetector:
         return keypoints_cloud
 
 if __name__ == "__main__":
-    pcd = read_from_pcd_file("/home/han/Projects/2D3DDataProcessing/Data/Robotcar_radar/Scenes/114793.pcd")
+    pcd = read_from_pcd_file("/home/han/Projects/2D3DDataProcessing/Data/Robotcar_radar/2019-01-10-11-46-21_2200-4200/570645.pcd")
     iss_detector = Open3DISSDetector(pcd)
-    keypoints_cloud = iss_detector.detect_ISS(salient_radius=0.5, non_max_radius=0.4, gamma_21=0.3, gamma_32=0.15)
+    keypoints_cloud = iss_detector.detect_ISS(salient_radius=1.0, non_max_radius=0.4, gamma_21=0.3, gamma_32=0.15)
 
     visualize_kp_in_pcd(keypoints_cloud, pcd)
     #visualize_kp_only(keypoints_cloud)

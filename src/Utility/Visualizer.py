@@ -27,7 +27,7 @@ def Visualize(np_pts, np_key_pts):
 def keypoints_to_spheres(keypoints):
     spheres = o3d.geometry.TriangleMesh()
     for keypoint in keypoints.points:
-        sphere = o3d.geometry.TriangleMesh.create_sphere(radius=0.5)
+        sphere = o3d.geometry.TriangleMesh.create_sphere(radius=0.2)
         sphere.translate(keypoint)
         spheres += sphere
     return spheres

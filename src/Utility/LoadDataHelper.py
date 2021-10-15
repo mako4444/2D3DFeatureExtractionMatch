@@ -25,6 +25,9 @@ def read_from_pcd_file(file_full_path):
     pcd = o3d.io.read_point_cloud(file_full_path)
     return pcd
 
+def read_from_image_file(file_full_path):
+    image = o3d.io.read_image(file_full_path)
+    return image
 
 if __name__ == "__main__":
     ReadPointCloudFromFile_ModelNet40("/home/han/Projects/Datasets/modelnet40_normal_resampled/airplane/airplane_0001.txt")

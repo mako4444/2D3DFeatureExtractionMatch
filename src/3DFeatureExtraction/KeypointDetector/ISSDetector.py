@@ -6,7 +6,7 @@ import sys
 this_dir = osp.dirname(__file__) # the path of current file
 project_root = osp.abspath(osp.join(this_dir, '../..')) #得到绝对路径
 sys.path.append(project_root)
-from Utility.LoadPointCloud import ReadPointCloudFromFile_ModelNet40
+from Utility.LoadDataHelper import ReadPointCloudFromFile_ModelNet40
 from Utility.Visualizer import Visualize
 
 class ISSDetector:
